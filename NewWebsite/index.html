@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>News Website</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            NEWS Today!
+        </div>
+
+        <script>
+            const apiKey = "ec15354c02484e54a9536f4e53f0005a";
+            const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey={29f8e42efe874ee2be23f0d1edb6844b}`;
+      
+            fetch()
+              .then(response => response.json())
+              .then(data => {
+                const articles = data.articles;
+                const articleList = document.getElementById("articles");
+      
+                articles.forEach(article => {
+                  const li = document.createElement("li");
+                  li.innerHTML = `<a href="${article.url}">${article.title}</a> - ${article.description}`;
+                  articleList.appendChild(li);
+                });
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          </script>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sportsNews">Sports</a></li>
+                <li><a href="#businessNews">Business</a></li>
+                <li><a href="#techNews">Technology</a></li>
+                <li><a href="#entertainmentNews">Entertainment</a></li>
+                <li><a href="#weatherNews">Weather</a></li>
+                <li><a href="#healthNews">Health</a></li>
+            </ul>
+            <div class="bar">
+                <i class="open fa-solid fa-bars-staggered"></i>
+                <i class="close fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" id="search-button"><i class="fa fa-search"></i></button>
+              </div>
+              
+              
+            
+        </nav>
+    </div>
+
+    
+    <div class="topHeadlines">
+        <div class="left">
+            <div class="title">
+                <h2>Breaking News</h2>
+            </div>
+            <div class="img" id="breakingImg">
+                <img src="https://www.ctvnews.ca/content/dam/ctvnews/en/images/2023/2/28/train-crash-in-greece-1-6293709-1677640867599.jpg" alt="Breaking News">
+            </div>
+            <div class="description">
+                At least 29 people were killed and more than 85 others were injured after two trains collided in northern&nbsp;Greece on&nbsp;Monday, causing several carriages to derail and catch fire.&nbsp;<a href="https://www.ctvnews.ca/world/fiery-greece-train-collision-kills-29-injures-at-least-85-1.6293595">Read more...</a>
+            </div>
+            
+            <div class="text" id="breakingNews">
+                <div class="title">
+                    
+                </div>
+                <div class="description">
+                </div>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="title">
+                <h2>Top Headlines</h2>
+            </div>
+            <div class="img" id="topImg">
+                <img src="https://cdn-hpiph.nitrocdn.com/bptpgdAkWqGbNUhrAHbeyVFSfQcmUYpS/assets/images/optimized/rev-66382a9/immigrationnewscanada.ca/wp-content/uploads/2023/02/282af094b70db5bac55d479072fa1fbb.Income-Tax-2023.jpeg" alt="Breaking News">
+            </div>
+            <div class="description">
+                Canada Revenue Agency (CRA) kicks off the 2023 tax-filing season on February 20, 2023 and Canadians have to file their 2022 tax returns before May 1, 2023.<a href="https://immigrationnewscanada.ca/new-canada-income-tax-brackets-important-dates-for-2023/">Read more...</a>
+            </div>
+            <div class="topNews">
+    
+            </div>
+
+            
+
+        </div>
+    </div>
+    <div class="page2">
+        <div class="news" id="nhlResults">
+            <div class="title">
+                <h2>NHL Results</h2>
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+        <div class="news" id="lottoResults">
+            <div class="title">
+                <h2>Lotto Results</h2>
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+        <div class="news" id="forexNews">
+            <div class="title">
+                <h2>FOREX</h2>
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+    </div>
+
+                </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
